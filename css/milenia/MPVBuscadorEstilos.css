@@ -1,0 +1,220 @@
+#headd{
+	margin: 0;
+	padding: 0px;
+	border: 0; 
+	font: inherit;
+	vertical-align: top; 
+	font-family: arial, verdana;
+	font-size: 12px;
+	line-height: 15px;  
+}
+
+.tabs-style-bar nav {
+	margin-bottom: 5px;
+}
+
+.tabs nav ul {
+	position: relative;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	list-style: none;
+}
+
+.tabs nav {
+	text-align: center;
+}
+
+.tabs {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.container > section {
+	padding: 5em 0;
+	min-height: 100%;
+}
+
+#tabsMilenia {
+	color: #74777b;
+	font-weight: 400;
+	font-family: 'Raleway', Arial, sans-serif;
+	width: 980px;
+	margin: auto;
+	padding-top: 10px;
+}
+
+.tabs nav ul li {
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0;
+	text-align: center;
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.tabs nav li.tab-current a {
+	color: #74777b;
+	font-weight: bold;
+}
+
+.tabs-style-bar nav ul li a {
+	margin: 0 2px;
+	background-color: #f7f7f7;
+	color: #74777b;
+	transition: background-color 0.2s, color 0.2s;
+	border: 1px solid #d9d9d9;
+}
+
+.tabs nav a {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 32px;
+}
+
+.content-wrap {
+	border: 1px solid #e5e5e5;
+	height: auto;
+}
+
+#divSeccionLocal, #divSeccionForaneo, #formRenovaciones{
+	padding: 18px;
+}
+
+.pagination ul>li>a:hover, .pagination ul>.active>a, .pagination ul>.active>span {
+    /*background-color: #f5f5f5;*/
+}
+.pagination ul>li>a, .pagination ul>li>span {
+    float: left;
+    padding: 0px 12px;
+    line-height: 30px;
+    text-decoration: none;
+    background-color: #ffffff;
+    /*border: 1px solid #dddddd;*/
+	    border-radius: 10px;
+    border-left-width: 0;
+	color: #000;
+}
+
+.pagination ul>li:first-child>a, .pagination ul>li:first-child>span {
+    border-left-width: 1px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+
+.pagination ul>li:not(:first-child):not(:last-child)>a:hover {
+    background-color: #f4f4f4;
+}
+
+.pagination ul>li.active:not(:first-child):not(:last-child)>a:hover {
+    color: #ffffff;
+    background-color: #DA291C;
+}
+
+
+.tabs-style-bar li.active a {
+	color: #ffffff;
+	background-color: #DA291C;
+}
+
+.tabs-style-bar nav ul li a:focus {
+	color: #ffffff;
+	background-color: #DA291C;
+}
+
+.tabs-style-bar nav ul li a:hover {
+	color: #ffffff;
+	background-color: #DA291C;
+}
+
+.tabs-style-bar nav ul li.tab-current a {
+	background-color: #999999;
+	color: #ffffff;
+	box-shadow: 0 5px 16px -10px rgba(244, 67, 54, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
+}
+
+.tabs label {
+	font-size: 13px;
+	color: #000000;
+	font-family: Roboto;
+	font-weight: bold;
+}
+
+.tabs input, select {
+	width: 125px !important;
+	margin-right: 10px !important;
+	margin-left: -3px !important;
+}
+
+.fa {
+	font-size: 15px;
+	padding: 0 5px 0 5px;
+}
+
+/* lista de pedido por cliente */
+#tablaListPedSus table { width: 100%; /*border-bottom: 1.5px solid #42BEAC;*/ /*margin-bottom: 10px; background-color: #F8F8F8;*/ }
+#tablaListPedSus table thead { display: block; border-bottom: 1.5px solid #DA291C; background-color: #eeeeee;}
+#tablaListPedSus table tbody { display: block; border: 1px solid #e5e5e5;}
+#tablaListPedSus table tbody tr:hover { background-color: #f4f4f4; cursor: pointer; }
+#tablaListPedSus table th {
+	text-align: center;
+	font-family: arial, verdana;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 1px;
+	vertical-align: middle;;
+ }
+
+#tablaListPedSus table td {
+	font-family: arial, verdana;
+	font-size: 10px;
+	padding: 8px 1px;
+	vertical-align: middle;
+	text-align: center;
+	line-height: normal;
+ }
+ 
+ #tablaListPedSus table td div {
+	padding: 1px;
+ }
+
+.cssListaPed5 { width: 5.5% !important; }
+.cssListaPed12 { width: 12% !important; }
+.cssListaPed13 { width: 11% !important; }
+.cssListaPed14 { width: 13% !important; }
+.cssListaPedFin { width: 2% !important; }
+
+.cssListaPedTd5 { width: 5.5% !important; }
+.cssListaPedTd12 { width: 12% !important; }
+.cssListaPedTd13 { width: 11% !important; }
+.cssListaPedTd14 { width: 13% !important; }
+
+#resultadosCliente #tablaCliente table td{
+	padding:0;
+}
+
+#resultadosCliente #tablaCliente table td div, #resultadosCliente #tablaCliente table th div{
+	padding: 2px;
+	text-align: center;
+}
+
+#resultadosCliente #tablaCliente table tbody{
+    border: 1px solid #e5e5e5;
+}

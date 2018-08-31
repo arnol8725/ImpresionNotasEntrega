@@ -1,0 +1,136 @@
+.ngdialog-overlay {
+	background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.indEspera{
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+}
+.spinner {
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: sweep 1s infinite linear;
+	-moz-animation: sweep 1s infinite linear;
+	animation: sweep 1s infinite linear;
+    border-radius:35px;
+}
+.spinner.rojo{
+	border-bottom:5px solid red;
+}
+.spinner.verde{
+	border-bottom:5px solid green;
+}
+@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes sweep { to { -moz-transform: rotate(360deg); } }
+@keyframes sweep { to { transform: rotate(360deg); } }
+
+.ngdialog-content{
+    background: transparent!important;
+    padding: 0!important;
+}
+
+.ngdialog-overlay{
+    background-color: rgba(255, 255, 255, 0.98)!important; 
+}
+
+.mensajes{
+    background: #fff;
+	border: 1px solid rgb(250, 255, 0);
+    margin: auto;
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 13px 19px 2px rgba(0,0,0,.14),0 5px 24px 4px rgba(0,0,0,.12);
+	border-radius:4px;
+}
+
+.mensajes .titulo{
+    color: #000;
+    padding: 5px;
+    text-align: left;
+    font-size: 16px !important;
+	line-height: 23px;
+}
+
+.mensajes .titulo:before{
+	background-image: url('../imagenes/logo_ekt_ico.png');
+    background-size: 23px 23px;
+    display: inline-block;
+    width: 23px; 
+    height: 23px;
+	vertical-align: middle;
+    content:"";
+	margin-right: 5px;
+}
+
+.mensajes .titulo img{
+	width: 23px;
+}
+
+.mensajes .titulo span{
+	position: absolute;
+    padding-left: 5px;
+}
+
+.mensajes .mensaje{
+    padding: 10px;
+    font-size: 15px;
+    line-height: 20px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.mensajes .mensajeTec{
+    margin: 10px;
+	padding : 5px;
+    font-size: 13px;
+    line-height: 20px;
+	color:#808080;
+}
+
+/*animacion*/
+.mensajes .mensajeTec.ng-hide-remove      { animation:.5s mostrar ease; }
+.mensajes .mensajeTec.ng-hide-add      { animation:.5s ocultar ease; }
+
+@keyframes mostrar {
+    0% {
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes ocultar {
+    0% {
+    opacity: 1;
+	}
+	100% {
+    opacity: 0;
+	transform: translate3d(0,100%,0);
+	}	
+}
+
+
+.mensajes .msjBotones{
+	text-align:right;
+	padding: 5px;
+}
+
+/*ROJO*/
+.mensajes.rojo .titulo{
+	background-color: rgb(250, 225, 0);
+}
+.mensajes.rojo .mensajeTec{
+    border-top : 1px solid red;
+	border-bottom : 1px solid red;
+}
+
+/*VERDE*/
+.mensajes.verde .titulo{
+	background-color: rgb(250, 225, 0);
+}
+.mensajes.verde .mensajeTec{
+    border-top : 1px solid green;
+	border-bottom : 1px solid green;
+}

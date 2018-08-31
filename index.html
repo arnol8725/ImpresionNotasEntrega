@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link href="css/reset-OpAdmin.css" rel="stylesheet"></link>
+	
+	<script src="lib/jquery-3.2.1.js"></script>
+	
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-route.min.js"></script>
+	<script src="lib/angular-ui-router.js"></script>
+	
+	<script src="lib/ADM-dateTimePicker.js"></script>
+	<link href="css/ADM-dateTimePicker.min.css" rel="stylesheet"></link>
+	
+	<script src="lib/ngDialog.js"></script>
+	<link href="css/ngDialog.min.css" rel="stylesheet"></link>
+	<link href="css/ngDialog-theme-plain.css" rel="stylesheet"></link>
+	<link href="css/mensajes-OpAdmin.css" rel="stylesheet"></link>
+	
+	
+	<script src="js/app-OpAdmin.js"></script>
+	<script src="servicios/MensajeServicio-OpAdmin.js"></script>
+	
+	<script src="controladores/ConsultaReimpresionNotaControlador.js"></script>
+	<script src="controladores/ConsultaDetallePedidoControlador.js"></script>
+
+	<script src="servicios/ConsultaReimpresionNotaServicios.js"></script>
+	
+	<style>
+		.ngdialog-close{
+			background-color: #008000;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+
+<div ng-app="appReimpresionNota">
+	<div ui-view></div>
+</div>
+
+</body>
+</html>

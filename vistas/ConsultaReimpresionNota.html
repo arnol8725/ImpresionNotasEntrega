@@ -1,0 +1,369 @@
+<style>
+	.mensajes{
+		font-family: Arial;
+	}
+	
+	body {
+	    font: 13.3333px Arial;
+		font-style: normal;
+		font-variant-ligatures: normal;
+		font-variant-caps: normal;
+		font-variant-numeric: normal;
+		font-weight: normal;
+		font-stretch: normal;
+		font-size: 13.3333px;
+		line-height: normal;
+		font-family: Arial;
+		overflow: hidden;
+	}
+	
+	.ADMdtpInput input {
+		height: 24px;
+	}
+	
+	#grid-presupuestos{
+		max-width: 985px;
+		padding-top: 10px;
+		margin: auto;
+	}
+	
+	#filtros-presupuesto{
+		position: relative;
+	}
+	
+	#tabla-presupuestos{
+		margin-top: 10px;
+		border-radius: 5px;
+		width: auto;
+		height: 300px;
+		overflow-y: scroll;
+	}
+	
+	#tr-pedidos{
+		font-weight: 700;
+		background-color: #f7d2d5;
+		color: #000;
+		text-align: center;
+	}
+	
+	#tr-pedidos th{
+		height: 35px;
+		line-height: 35px;
+	}
+	
+	#tr-pedidos-active{
+		background-color: #fec0c6;
+	}
+	
+	#grid-presupuestos tr [colspan="7"] {
+		text-align: center;
+		padding-top: 20px;
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+	
+	.text-left {
+		text-align: left;
+	}
+	
+	.text-right {
+		text-align: right;
+	}
+	
+	.ADMdtpInput input {
+		background: white url(img/fa-calendar.png) right no-repeat;
+		padding-right: 20px;
+	}
+	
+	.div-date-filter{
+		height: 25px;
+		display: inline-block;
+		margin-right: 20px;
+	}
+	.div-date-filter label{
+		line-height: 20px;
+	}
+	
+	.button {
+		font-size: 12.5px;
+		text-align: center;
+		cursor: pointer;
+		outline: none;
+		color: #fff;
+		background-color: green;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0 1px #555;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		padding-right: 18px;
+		padding-left: 18px;
+		font-weight: bold;
+	}
+
+	.button:hover {background-color: #397f5c}
+
+	.button:active {
+	  background-color: #3e8e41;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+	
+	#grid-presupuestos td {
+		padding: 5px 3px;
+		vertical-align: middle;
+	}
+	
+	#grid-presupuestos tr:not(:first-child):hover {
+		background-color: #f0f5f5;
+		text-shadow: 1px 1px #ccc;
+	}
+	
+	#total-presupuestos{
+		float: right;
+		margin: 22px;
+		font-size: 14px;
+	}
+	
+	.color-ekt{
+		color: #d41124;
+	}
+	
+	.color-gray{
+		color: gray;
+	}
+	
+	#info_reporte{
+		float: right;
+	}
+	
+	hr {
+		display: block;
+		height: 1px;
+		border: 0;
+		border-top: 1px solid #d41325;
+		margin: 1em 0;
+		padding: 0;
+	}
+	
+	#btn-consultar-cp {
+		position: absolute;
+		top: 0px;
+		right: 303px;
+	}
+	
+	a.btn {
+		font-family: arial, verdana;
+		display: inline-block;
+		background-color: #999999;
+		color: #ffffff;
+		width: 123px;
+		height: 21px;
+		line-height: 21px;
+		text-align: center;
+		margin: 4px auto;
+	}
+
+/*Estilos para el boton de busqueda*/
+	#busqueda {
+	    height: 22px !important;
+	    border: 1px solid #CECECE;
+	    vertical-align: top;
+	    width: 205px;
+	    margin-top: 6px;
+	    padding-left: 10px;
+	    font-size: 12px;
+	    color: #000000;
+	    font-family: Arial, Verdana;
+	}
+	/*//background-image: url(/elektrafront/epos/Comunes/RecursosMenu/imagenes/search2.png);*/
+	.botonBus {	    
+	    background-image: url('/elektrafront/epos/Comunes/RecursosMenu/imagenes/search2.png');	    
+	    width: 22px;
+	    height: 22px;
+	    background-size: cover;
+	    cursor: pointer;
+	    border: none;
+	    position: relative;
+	    margin-top: 0px;
+	    left: -5px;
+	    top: 6px;
+	}
+	strong { 
+    	font-weight: bold;
+	}
+</style>
+
+<script type="text/javascript">
+function myMethod(e){
+  var key = (document.all) ? e.keyCode : e.which;
+     
+    console.log('Valor de key');
+    console.log(key);
+   
+    return (key <= 13 || (key >= 48 && key <= 57) || key == 46);
+
+}
+</script>
+
+<div id="grid-presupuestos" ng-init="initConsultaPresupuestos()" >
+	<div>
+		<img src="img/logoElektra.png" width="150px">
+		<div id="info_reporte">
+			<span><b>Reimpresión nota de entrega 2 </b></span><br>
+			<span>Empleado: <span><b>{{empleado}}</b></span></span>
+		</div>
+		<hr>
+	</div>
+	
+<!--	<div id="filtros-presupuesto">
+		<div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div><div class="md-ripple-container"></div></div>
+		<form name='frmFiltros'>
+			<div class="div-date-filter">
+				<label>A partir del día:</label>
+				<adm-dtp ng-model="startDate" full-data="startDate_detail" maxdate="{{endDate_detail.unix}}"></adm-dtp>
+			</div>
+			<div class="div-date-filter">
+				<label>Al día de:</label>
+				<adm-dtp ng-model="endDate" full-data="endDate_detail" mindate="{{startDate_detail.unix}}"></adm-dtp>
+			</div>
+			<div class="div-date-filter">
+				<a title="Continuar con la Venta" id="btn-consultar-cp" class="button" ng-click="consultarPresupuestos();">Consultar</a>
+			</div>
+			<br><br>
+
+			<div ng-repeat = "venta in tipoVenta" style="display: inline-block;">
+				<input id="chk-vta-{{venta.tipo}}" type="checkbox" ng-model="venta.seleccionado" ng-checked="venta.seleccionado" />
+				<label for="chk-vta-{{venta.tipo}}">{{venta.nombre}}</label>
+			</div>
+		</form>
+		onkeypress="return ValidarCaracteres();"
+	</div> -->
+
+	<div id="BusquedaPedido" styyle="width:33%; float:left;" ng-show="!busquedaReporte">
+			<br/>
+
+			<form name='frmBusqueda'>
+				
+				
+			
+				<div class="itemMenu">
+					<div style="background-color: #DA291C; padding: :40px;  width: 225px;text-align: center;">
+						<label  style="color: white; font-size: 14px;margin: : :30px;"><strong>Buscar Pedido</strong></label>	
+					</div>
+					
+					
+				
+		            <input id="busqueda" type="text" maxlength="9" class="buscar ui-autocomplete-input"  ng-model="pedido" onkeypress="return myMethod(event);" placeholder="Busqueda de Pedido" autocomplete="off" style="background-position: 295px 10px;" ><span role="status" aria-live="polite" class="ui-helper-hidden-accessible" ></span>
+		            <input class="botonBus" id="btnbusqueda" ng-click="consultarPresupuestos2();" for"busqueda"="" type="button">
+	          	</div>
+          		<br/>
+	          	<div class="div-date-filter" ng-click="consultarPresupuestos2();">
+					<a title="Continuar con la Venta" id="btn-consultar-cp1" class="button" style="position: relative;" >Consultar</a>
+				</div>
+				<br><br>
+			</form>
+			
+	</div>
+
+
+	<div  ng-show="busquedaReporte" style="width: 100%">
+
+		<strong style="font-size:20px; ">Reimpresión de Nota de Entrega</strong>
+
+		<div style="width: 100%">
+				
+				<table style="width: 100%;">
+					<thead>
+						<tr>
+							<td></td>
+						
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							
+							<td >
+									<div style="width: 100%;display: inline-flex;">
+										<div style="width: 65%;background-color: #E6E6E6; font-size: 14px; border: 5px solid white;">
+											
+											<label><strong > Nombre / Razón Social:</strong> {{Respuesta.ObtenerDetallePedidoReimpresionResult.NombreCliente != null || Respuesta.ObtenerDetallePedidoReimpresionResult.NombreCliente.length >0?Respuesta.ObtenerDetallePedidoReimpresionResult.NombreCliente:'Sin nombre o razon social' }}</label><br/>
+											<label><strong >No. de Cliente Tienda: </strong>{{Respuesta.ObtenerDetallePedidoReimpresionResult.CU != null || Respuesta.ObtenerDetallePedidoReimpresionResult.CU != '' ?Respuesta.ObtenerDetallePedidoReimpresionResult.CU : '0000-0000-0' }}</label><br/>
+											<label><strong >No. de Pedido: </strong>{{Respuesta.ObtenerDetallePedidoReimpresionResult.IdPedido}}</label><br/>
+										</div>
+										<div style="width: 35%;background-color: #E6E6E6;font-size: 14px; border: 5px solid white;"> 
+											
+											<label><strong >Tipo de Venta: </strong>{{Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===1?'Contado':Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===2?'Credito':Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===3?'partado':Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===4?'Mostrador':'Sin Descripción'}}</label><br/>
+											<label><strong >Estatus del Pedido: </strong>{{'Surtido'}}</label><br/>
+											<!-- <label><strong >Saldo de la Venta : </strong>{{'$2,000'}}</label><br/> -->
+										</div>	
+									</div>
+									
+							
+							  </td>
+							
+						</tr>
+					</tbody>
+				</table>
+
+		</div>
+
+
+
+<div id="tabla-presupuestos"> 
+
+		<table width="100%" cellspacing="0" cellpadding="0">
+			<tr id="tr-pedidos">
+				<th>Código</th>
+				<th>Descripción</th>
+				<th>Precio</th>
+				<th>Cantidad</th>
+				<th>Descuento</th>				
+			<!-- 	<th>Subtotal</th> -->
+			</tr>
+			<tr ng-show="sinResultados">
+				<td colspan="7" class="color-gray">{{mensaje}}</td>
+			</tr>
+			<tr ng-show="!sinResultados" ng-repeat="presupuesto in Respuesta.ObtenerDetallePedidoReimpresionResult.DetallesProducto">
+				<td class="text-center">{{presupuesto.Sku}}</td>
+				<td class="text-center">{{presupuesto.Descripcion}}</td>
+				<td class="text-center">{{'$'+currency(presupuesto.Precio)}}</td>
+				<td class="text-center">{{presupuesto.Cantidad}}</td>
+				<td class="text-center">{{'$'+currency(presupuesto.Descuento)}}</td>
+			<!-- 	<td class="text-center">{{ '$'+currency(presupuesto.Cantidad*(presupuesto.Precio-presupuesto.Descuento))}}</td> -->
+				
+			</tr>
+		</table>
+
+</div>
+<!--	<strong><p id="total-presupuestos">Total : <b class="color-ekt">{{total}}</b></p> </strong> -->
+<div style="display: inline-block;width: 100%;">
+		
+		<br/>
+		<div>
+			<div style="width: 75%;display: inline-block;" >
+				
+				<div style="width: 100%;display: inline-block;" ng-show="Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===2">
+					<input type="checkbox" id="nota" name=""  ng-checked="imprimeNota"/>Nota de entrega
+					<input type="checkbox" name="" id="cale"  ng-checked="imprimeCalendario" />Calendario de pagos
+				</div>
+				<!-- <input type="checkbox" name="" />Cartas del seguro -->
+			</div>
+			
+			<div style="display: inline-block; text-align: left;">
+				<div class="div-date-filter" ng-click="regresar();">
+						<a title="Continuar con la Venta" id="btn-consultar-cp1"   class="button" style="position: relative;" >Regresar</a>
+				</div>
+			
+			
+				<div class="div-date-filter" ng-click="consultardatosTicket();">
+						<a title="Continuar con la Venta" id="btn-consultar-cp1"  class="button" style="position: relative;" >Imprimir</a>
+				</div>
+			</div>
+		
+		</div>
+</div>
+	 
+</div>

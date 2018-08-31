@@ -1,0 +1,729 @@
+#headd{
+	margin: 0;
+	padding: 0px;
+	border: 0; 
+	font: inherit;
+	vertical-align: top; 
+	font-family: arial, verdana;
+	font-size: 12px;
+	line-height: 15px;  
+}
+
+#divSinProductos{
+	height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#bloqueoPantallaMilPV {
+	background-color: #FFF !important;
+}
+
+.ngdialog-overlay {
+	animation: none;
+}
+
+h3 {
+    font-family: arial, verdana;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    display: block;
+    margin: 0;
+    padding: 0px;
+    border: 0;
+    font-weight: bold;
+}
+
+.tabs-style-bar nav {
+    margin-bottom: 5px;
+}
+
+.tabs nav ul {
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+    list-style: none;
+}
+
+
+.tabs nav {
+    text-align: center;
+}
+
+.tabs {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.tabs-style-bar nav ul li a:hover {
+    color: #ffffff;
+    background-color: #DA291C;
+}
+
+.container > section {
+    padding: 5em 0;
+    /*font-size: 1.25em;*/
+    min-height: 100%;
+}
+
+#tabsMilenia {
+    /*background: #e7ecea;*/
+    color: #74777b;
+    font-weight: 400;
+    /*font-size: 1em;*/
+    font-family: 'Raleway', Arial, sans-serif;
+    /*
+        max-width: 1020px;
+        min-width: 768px;
+        */
+    width: 980px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.tabs nav ul li {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 0;
+    text-align: center;
+}
+
+.tabs nav li.tabCurrent a {
+    color: #74777b;
+    font-weight: bold;
+}
+
+.tabs-style-bar nav ul li a {
+    margin: 0 2px;
+    background-color: #f7f7f7;
+    color: #74777b;
+    transition: background-color 0.2s, color 0.2s;
+    border: 1px solid #d9d9d9;
+}
+
+.tabs nav a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 32px;
+}
+
+
+
+.tabs-style-bar nav ul li a:hover {
+    /*color: #a0a0a0;*/
+}
+
+.tabs-style-bar nav ul li.tabCurrent a {
+    background-color: #DA291C;
+    color: #ffffff;
+    box-shadow: 0 5px 16px -10px rgba(244, 67, 54, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2);
+}
+
+
+
+.tabs label {
+    font-size: 13px;
+    color: #000000;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.toggle-btn {
+    border: 1px solid #d9d9d9;
+    display: inline-block;
+    width: 50px;
+    height: 19px;
+    border-radius: 50px;
+    position: relative;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyklEQVQ4T42TaxHCQAyENw5wAhLACVUAUkABOCkSwEkdhNmbpHNckzv689L98toIAKjqGcAFwElEFr5ln6ruAMwA7iLyFBM/TPDuQSrxwf6fCKBoX2UMIYGYkg8BLOnVg2RiAEexGaQQq4w9e9klcxGLLAUwgDAcihlYAR1IvZA1sz/+AAaQjXhTQQVoe2Yo3E7UQiT2ijeQdojRtClOfVKvMVyVpU594kZK9zzySWTlcNqZY9tjCsUds00+A57z1e35xzlzJjee8xf0HYp+cOZQUQAAAABJRU5ErkJggg==') no-repeat 35px center #DA291C;
+    background-size: 9px 9px;
+    cursor: default;
+    -webkit-transition: background-color .40s ease-in-out;
+    -moz-transition: background-color .40s ease-in-out;
+    -o-transition: background-color .40s ease-in-out;
+    transition: background-color .40s ease-in-out;
+    top: 5px;
+}
+
+.toggle-btn input[type='checkbox'] {
+    cursor: default;
+}
+
+.active {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmUlEQVQ4T6WT0RWDMAhFeZs4ipu0mawZpaO4yevBc6hUIWLNd+4NeQDk5sE/PMkZwFvZywKSTxF5iUgH0C4JHGyF97IggFVSqyCFga0CvQSg70Mdwd8QSSr4sGBMcgavAgdvwQCtApvA2uKr1x7Pu++06ItrF5LXPB/CP4M0kKTwYRIDyRAOR9lJTuF0F0hOAJbKopVHOZN9ACS0UgowIx8ZAAAAAElFTkSuQmCC') no-repeat 8px center #037550;
+    background-size: 12px 12px;
+}
+
+.lblActive {
+    color: #037550;
+}
+
+#lblEsVentaEmpleado {
+    margin-left: 5px;
+}
+
+.toggle-btn.active .round-btn {
+    left: 32px;
+}
+
+.round-btn {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    margin-top: -8px;
+    -webkit-transition: all .30s ease-in-out;
+    -moz-transition: all .30s ease-in-out;
+    -o-transition: all .30s ease-in-out;
+    transition: all .30s ease-in-out;
+}
+
+.cb-value {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+#divVentaEmpleado {
+    line-height: 34px;
+    width: 280px;
+}
+
+#imgClienteMilPV {
+    border-radius: 30px;
+}
+
+#tblCapacidadMilPV {
+    width: 100%;
+    line-height: 16px;
+    text-align: left;
+    font-family: Roboto-Regular,arial;
+    font-size: 12px;
+    color: #000000;
+}
+
+    #tblCapacidadMilPV td:nth-child(2) {
+        font-weight: bold;
+    }
+
+#divStatusCreditoMilPV {
+    margin: 15px;
+}
+
+#tblTotalesMilPV {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+    #tblTotalesMilPV td {
+        padding-top: 4px;
+    }
+
+    #tblTotalesMilPV tr:nth-child(2) h3 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #tblTotalesMilPV tr:nth-child(3) h3 {
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+a.btn.corto {
+    width: 90px;
+}
+
+.fa {
+    font-size: 15px;
+    padding: 0 5px 0 5px;
+}
+
+a.btn {
+    width: 150px;
+	cursor: pointer;
+}
+
+.colorVerdeMilPV {
+    color: #037550 !important;
+}
+
+.colorGrisMilPV {
+    color: #6B6969;
+}
+
+#slider label {
+    text-align: left;
+    top: auto;
+    left: 17px;
+    margin-left: 0;
+    margin-bottom: -.5em;
+    display: block;
+    position: absolute;
+    /*width: 150px;*/
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+#slider label div {
+    width: 80px;
+    text-align: center;
+    float: left;
+    font-weight: normal;
+}
+
+#slider label:hover {
+    /*background-color: #f6f6f6;*/
+    background: #f3f2f2;
+    transition: all 0.2s cubic-bezier(0.37, 0.21, 0.45, -0.05);
+}
+
+#slider label.selected {
+    background-color: #999999;
+    color: #ffffff;
+}
+
+
+#slider {
+    /*height: 150px;*/
+    /*margin-left: 30px;*/
+    cursor: pointer;
+}
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background-color: transparent !important;
+    background: url(imagenes/Cotizador/btn-range.png) 50% 50% repeat !important;
+    width: 25px !important;
+    height: 25px !important;
+    border: none !important;
+    position: absolute;
+    left: -8px !important;
+    cursor: pointer !important;
+}
+
+.ui-slider-range {
+    background: url(imagenes/Cotizador/bg-range.png) 50% 50% repeat !important;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.ui-widget-content {
+    background: none;
+    width: 11px;
+}
+
+#divContenedorSlider {
+    padding-top: 22px;
+}
+
+#divContenedorPlazos {
+    margin-top: 10px;
+    /*overflow-y: auto;*/
+    width: 275px;
+    height: 530px;
+}
+
+#divEncabezadosPlazos {
+    display: inline-block;
+    /* margin-bottom: 20px; */
+    margin-left: 27px;
+    /* position: fixed; */
+    z-index: 1;
+    background: #FFFFFF;
+    /* width: 100%; */
+}
+
+    #divEncabezadosPlazos label {
+        width: 82px;
+        text-align: center;
+        float: left;
+        font-family: arial, verdana;
+        font-size: 13px;
+    }
+
+#divContenedorPlazos::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #D62929;
+}
+
+#divDescProductoMilPV {
+    width: 100%;
+    height: 23px;
+    line-height: 23px;
+    border-bottom: 1px solid #e5e5e5;
+    float: left;
+    /*
+        padding-left: 5px;
+        padding-right: 5px;
+        */
+}
+
+#divRegionOpciones{
+	    width: 100%;
+    height: 29px;
+    line-height: 25px;
+    border-bottom: 1px solid #e5e5e5;
+    float: left;
+    /*
+        padding-left: 5px;
+        padding-right: 5px;
+        */
+}
+
+#divAgregarMilPV {
+	float: right;
+    text-align: right;
+	color: #17009e;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#divAgregarMilPV:hover{
+	text-decoration: underline;
+}
+
+#lblAgregarMilPV {
+    font-family: arial, verdana;
+    font-size: 14px;
+    color: #000000;
+}
+
+#imgAgregarMilPV {
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+/*
+    #imgAgregarMilPV:hover {
+        opacity: 0.8;
+    }
+*/
+.divProductoMilPV {
+    border: 1px solid #dbd9d9;
+    width: 97%;
+    height: 75px;
+    margin: 1%;
+    padding: -24px;
+}
+
+    .divProductoMilPV:hover {
+        background: #f3f2f2;
+        transition: all 0.2s cubic-bezier(0.37, 0.21, 0.45, -0.05);
+    }
+
+
+
+
+#lblDescripcionMilPV {
+    width: 231px;
+    display: inline-block;
+    text-align: left;
+    font-family: arial, verdana;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+#lblCantidadMilPV {
+    width: 57px;
+}
+
+#lblPrecioMilPV {
+    width: 60px;
+}
+
+#lblCantidadMilPV, #lblPrecioMilPV {
+    display: inline-block;
+    text-align: center;
+    font-family: arial, verdana;
+    font-size: 14px;
+}
+
+.lblEditarMilPV {
+    margin-right: 13px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Roboto-Regular,arial, verdana;
+}
+
+    .lblEditarMilPV:hover {
+        text-decoration: underline;
+    }
+
+.imgBorrarMilPV {
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+    .imgBorrarMilPV:hover {
+        opacity: 0.8;
+    }
+
+.divSemiCirculo {
+    border-bottom-right-radius: 24px;
+    border-top-right-radius: 24px;
+    height: 24px;
+    width: 11px !important;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    display: none;
+}
+
+#slider label.selected .divSemiCirculo {
+    background: #ffff;
+}
+
+.lblPagoPuntualMilPV {
+    font-family: arial, verdana;
+    color: #037550;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lblEnlaceMilPV {
+    color: #17009e;
+    text-decoration: none;
+    font-family: Roboto-Regular,arial, verdana;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    .lblEnlaceMilPV:hover {
+        text-decoration: underline;
+    }
+
+.lblSkuMilPV {
+    font-family: Roboto-Regular,arial, verdana;
+    font-size: 12px;
+    color: #000000;
+}
+
+.inputCantidadMilPV {
+    width: 37px !important;
+    height: 22px;
+    text-align: center !important;
+}
+
+.divEdicionMilPV {
+    text-align: right;
+    height: 14px;
+    line-height: 14px;
+    position: relative;
+}
+
+.divTextDescMilPV {
+    text-align: left;
+    height: 16px;
+    line-height: 16px;
+    position: relative;
+    font-size: 12px;
+    color: #000000;
+}
+
+    .divTextDescMilPV > span {
+        display: block;
+    }
+
+    .divTextDescMilPV div {
+        width: 100%;
+    }
+
+    .divTextDescMilPV a {
+        color: #17009e;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+        .divTextDescMilPV a:hover {
+            text-decoration: underline;
+        }
+
+.divImgProductoMilPV {
+    float: left;
+    text-align: center;
+    height: 100%;
+    width: 25%;
+    position: relative;
+}
+
+.divDescripProductoMilPV {
+    float: left;
+    height: 72px;
+    width: 75%;
+    position: relative;
+}
+
+.divImgProductoMilPV img {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+
+.lblSkuProdMilPC {
+    width: 50%;
+    display: inline-block;
+}
+
+.lblCantidadProdMilPC {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+.lblPrecioProdMilPV, .lblPrecioDescProdMilPV {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+
+.divPlazosVAEMilPV {
+    margin: 10% auto auto;
+    vertical-align: middle;
+}
+
+#divContenidoCredito {
+    scrollbar-face-color: blue;
+    scrollbar-arrow-color: blue;
+}
+
+#divProductosCotMilPV {
+    width: 100%;
+    height: 370px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: left;
+}
+
+#divContenedorCredito {
+    width: 345px;
+    height: 580px;
+    border: 1px solid #e5e5e5;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    position: relative;
+}
+
+.divContCreditoApagado {
+    width: 0 !important;
+    border: 0 !important;
+}
+
+.divResumenContadoMilPV {
+}
+
+#divContenedorResumenMilPV {
+    width: 395px;
+    float: left;
+}
+
+.divResumenContadoMilPV {
+    width: 668px !important;
+}
+
+#divContenedorInfoCliente {
+    width: 225px;
+    height: 580px;
+    border: 1px solid #e5e5e5;
+    float: left;
+}
+
+.clsCotizadorContadoMilPV #divContenedorCredito {
+    width: 0;
+    border: 0;
+}
+
+.clsCotizadorContadoMilPV #divContenedorCredito {
+    width: 0;
+    border: 0;
+}
+
+.clsCotizadorContadoMilPV #divContenedorInfoCliente {
+    /*margin-left: 105px;*/
+    width: 300px;
+}
+
+.clsCotizadorContadoMilPV #lblDescripcionMilPV {
+    width: 379px;
+}
+
+.clsCotizadorContadoMilPV #lblCantidadMilPV {
+    width: 174px;
+}
+
+.clsCotizadorContadoMilPV nav {
+    /*margin-left: 104px;*/
+}
+
+.clsCotizadorContadoMilPV #tblTotalesMilPV {
+    width: 75%;
+}
+
+    .clsCotizadorContadoMilPV #tblTotalesMilPV tr:nth-child(1) {
+        height: 31px;
+    }
+
+    .clsCotizadorContadoMilPV #tblTotalesMilPV tr:nth-child(2) {
+        height: 41px;
+    }
+
+.clsCotizadorContadoMilPV a.btn.corto {
+    width: 190px;
+}
+
+
+
+.clsProductoDescuentoMilPV .lblPrecioProdMilPV {
+    text-decoration: line-through;
+}
+
+    .clsProductoDescuentoMilPV .lblPrecioProdMilPV b::before, .clsProductoDescuentoMilPV .lblPrecioProdMilPV b::after {
+        content: "\00a0";
+    }
+
+.clsProductoDescuentoMilPV {
+    height: 87px !important;
+}
+
+.lblAhorroProdMilPV {
+    width: 50%;
+    display: inline-block;
+    font-family: Roboto-Regular,arial;
+    color: #037550;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0px;
+}

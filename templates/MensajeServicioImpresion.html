@@ -1,0 +1,14 @@
+<style>
+	.ngdialog-overlay {
+		background-color: rgba(0, 0, 0, 0.4) !important;
+	}
+</style>
+<div class="mensajes {{clase}}">
+    <div class="titulo">{{titulo}}</div>
+    <div class="mensaje">{{msj}}</div>
+	<div class="mensajeTec ng-hide" ng-show='msjTecnico && mostrarMsgTec'>{{msjTecnico}}</div>
+	<div class='msjBotones'>
+		<a href="" class="btn" ng-click='reimprimir(); closeThisDialog();'>No</a>
+		<a href="" class="btn" ng-click='limpiar(); closeThisDialog(); '>Si</a>		
+	</div>
+</div>

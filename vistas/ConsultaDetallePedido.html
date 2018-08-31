@@ -1,0 +1,1285 @@
+
+<link rel="stylesheet" href="../css/milenia/font-awesome.min.css">
+<style>
+	.mensajes{
+		font-family: Arial;
+	}
+	
+	body {
+	    font: 13.3333px Arial;
+		font-style: normal;
+		font-variant-ligatures: normal;
+		font-variant-caps: normal;
+		font-variant-numeric: normal;
+		font-weight: normal;
+		font-stretch: normal;
+		font-size: 13.3333px;
+		line-height: normal;
+		font-family: Arial;
+		overflow: hidden;
+	}
+	
+	.ADMdtpInput input {
+		height: 24px;
+	}
+	
+	#grid-presupuestos{
+		max-width: 985px;
+		padding-top: 10px;
+		margin: auto;
+	}
+	
+	#filtros-presupuesto{
+		position: relative;
+	}
+	
+	#tabla-presupuestos{
+		margin-top: 10px;
+		border-radius: 5px;
+		width: auto;
+		height: 380px;
+		/*overflow-y: scroll;*/
+	}
+	
+	#tr-pedidos{
+		font-weight: 700;
+		background-color: #f4f4f4;;
+		color: #000;
+		text-align: center;
+	}
+	
+	#tr-pedidos th{
+		height: 35px;
+		line-height: 35px;
+	}
+	
+	#tr-pedidos-active{
+		background-color: #fec0c6;
+	}
+	
+	#grid-presupuestos tr [colspan="7"] {
+		text-align: center;
+		padding-top: 20px;
+	}
+	
+	.text-left {
+		text-align: center;
+	}
+	
+	.text-right {
+		text-align: left;
+	}
+	
+	.text-right {
+		text-align: right;
+	}
+	
+	.ADMdtpInput input {
+		background: white url(img/fa-calendar.png) right no-repeat;
+		padding-right: 20px;
+	}
+	
+	.div-date-filter{
+		height: 25px;
+		display: inline-block;
+		margin-right: 20px;
+	}
+	.div-date-filter label{
+		line-height: 20px;
+	}
+	
+	.button {
+		font-size: 12.5px;
+		text-align: center;
+		cursor: pointer;
+		outline: none;
+		color: #fff;
+		background-color: green;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0 1px #555;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		padding-right: 18px;
+		padding-left: 18px;
+		font-weight: bold;
+	}
+
+	.button:hover {background-color: #397f5c}
+
+	.button:active {
+	  background-color: #3e8e41;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+	
+	#grid-presupuestos td {
+		padding: 5px 3px;
+		vertical-align: middle;
+	}
+	
+	#grid-presupuestos tr:not(:first-child):hover {
+		background-color: #f0f5f5;
+		text-shadow: 1px 1px #ccc;
+	}
+	
+	#total-presupuestos{
+		float: right;
+		margin: 22px;
+		font-size: 14px;
+	}
+	
+	.color-ekt{
+		color: #d41124;
+	}
+	
+	.color-gray{
+		color: gray;
+	}
+	
+	#info_reporte{
+		float: right;
+	}
+	
+	hr {
+		display: block;
+		height: 1px;
+		border: 0;
+		border-top: 1px solid #d41325;
+		margin: 1em 0;
+		padding: 0;
+	}
+	
+	#btn-consultar-cp {
+		position: absolute;
+		top: 0px;
+		right: 303px;
+	}
+	
+	a.btn {
+		font-family: arial, verdana;
+		display: inline-block;
+		background-color: #999999;
+		color: #ffffff;
+		width: 123px;
+		height: 21px;
+		line-height: 21px;
+		text-align: center;
+		margin: 4px auto;
+	}
+
+/*Estilos para el boton de busqueda*/
+	#busqueda {
+	    height: 22px !important;
+	    border: 1px solid #CECECE;
+	    vertical-align: top;
+	    width: 205px;
+	    margin-top: 6px;
+	    padding-left: 10px;
+	    font-size: 12px;
+	    color: #000000;
+	    font-family: Arial, Verdana;
+	}
+	.busquedass {
+	    height: 22px !important;
+	    border: 1px solid #CECECE;
+	    vertical-align: top;
+	    width: 205px;
+	    margin-top: 6px;
+	    padding-left: 10px;
+	    font-size: 12px;
+	    color: #000000;
+	    font-family: Arial, Verdana;
+	}
+	/*//background-image: url(/elektrafront/epos/Comunes/RecursosMenu/imagenes/search2.png);*/
+	.botonBus {	    
+	    background-image: url('/elektrafront/epos/Comunes/RecursosMenu/imagenes/search2.png');	    
+	    width: 22px;
+	    height: 22px;
+	    background-size: cover;
+	    cursor: pointer;
+	    border: none;
+	    position: relative;
+	    margin-top: 0px;
+	    left: -5px;
+	    top: 6px;
+	}
+	strong { 
+    	font-weight: bold;
+	}
+	.detalle {
+		border-style: solid;
+		border-color: #DA291C;
+		border-width: 2px;
+	}
+
+    /*Estilos del detalle*/
+    .btn .fa{
+		padding-right: 6px;
+	}
+	
+	.pagination ul>li>a, .pagination ul>li>span {
+		float: left;
+		padding: 0px 12px;
+		line-height: 30px;
+		text-decoration: none;
+		background-color: #ffffff;
+		/* border: 1px solid #dddddd; */
+		border-radius: 10px;
+		border-left-width: 0;
+		color: #000;
+		font-size: 12px;
+	}
+	
+	.active a {
+		color: #ffffff !important;
+		background-color: #DA291C !important;
+	}
+	
+	.pagination ul>li:not(:first-child):not(:last-child)>a:hover {
+		background-color: #f4f4f4;
+	}
+	
+	
+	.cb {
+	  display: none;
+	}
+/*label {
+  display: inline-block;
+  position: relative;
+  padding-left: 22px;
+  font-size: 11px;
+  line-height: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+label:before {
+  line-height: 20px;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #666666;
+  cursor: pointer;
+}*/
+input[type=checkbox]:checked + label:before{
+  content: "\2713";
+  color: #DA291C /*#666666*/;
+  text-align: center;
+  line-height: 16px;
+}
+.squaredOne {
+display: inline;
+}
+
+#plContenedorFiltros{
+    width: 100%;
+    position: relative;
+	display: table;
+}
+
+#plContenedorFiltrosIzq{
+    width: 75%;
+    height: 100%;
+    display: table-cell;
+    align-items: center;
+	left: 0;
+}
+
+#plContenedorFiltrosDer{
+    width: 35%;
+    height: 100%;
+    display: table-cell;
+    align-items: center;
+	right: 0;
+	text-align: right;
+}
+
+#plContenedorFiltros table td{
+	vertical-align:top;
+}
+
+#tblProductosLiquidacion .fa{
+	font-size: 12px;
+    color: black;
+	padding: 1px;
+}
+
+#tblProductosLiquidacion .fa:hover {
+    color: #DA291C;
+}
+
+.pl-rojo{
+	color: #DA291C !important;
+}
+.lblSkuDetalle{
+	cursor: pointer;
+}
+
+.lblSkuDetalle:hover{
+	color: #DA291C;
+}
+
+#headd{
+	margin: 0;
+	padding: 0px;
+	border: 0; 
+	font: inherit;
+	vertical-align: top; 
+	font-family: arial, verdana;
+	font-size: 12px;
+	line-height: 15px;  
+}
+
+#tblProductosLiquidacion tbody tr:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+
+/*Estilos para la carga de tabBar*/
+#wrapperCliente {
+ max-width: 1020px;
+ min-width: 768px;
+ margin: 0  auto;
+ position: relative;
+}
+
+.etabsCliente-tab {
+  margin-top: 7px;
+  padding: 0;
+  font-size: 0;
+  margin-left: 11px;
+}
+.etabsCliente-tab>li {
+  display: inline-block;
+  zoom:1;
+  *display:inline;
+  background-color: #f4f4f4;
+  border: 2px solid #ffffff;
+  border-bottom: none;
+  border-right: none;
+}
+.etabsCliente-tab>li>a {
+  font-family: arial, verdana;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  padding: 7px 25px 7px 25px;
+  color: #333333;
+  text-decoration: none;
+  margin: 0px;
+  border: 0px;
+  vertical-align: top;
+  line-height: 15px;
+}
+.etabsCliente-tab>li.active>a,
+.etabsCliente-tab>li.active>a:hover,
+.etabsCliente-tab>li.active>a:focus {
+  color: #ffffff;
+  background-color:
+  #DA291C;
+}
+.tabCliente-container .panelCliente-container {
+  padding: 0px;
+  min-height: 400px;
+}
+div.checks {
+  position: absolute;
+  font-size: 14px;
+  top: -1px;
+  left: 46%;
+  font-size: 14px;
+}
+div.check {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+/* fin tabs tipo busquedas cliente */
+
+
+/* table parent */
+div.tableCliente_parent {
+	display: table;
+	width: 992px;
+	border-top: 1px solid #d9d9d9;
+	padding-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.tableCliente_parent h2 {
+	text-align: left;
+	background-color: #DA291C;
+	padding: 6px 5px 6px 10px;
+	color: #FFFFFF;
+  font-weight: bold;
+}
+div.tableCliente_parent h2.imagen {
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-position: center left 10px;
+}
+div.tableCliente_parent h2.azul { background-color: #305274; }
+div.tableCliente_parent h2.verde { background-color: #037550; }
+div.tableCliente_parent h2.vino { background-color: #78342F; }
+div.tableCliente_parent h2.gris { background-color: #959595; }
+div.tableCliente_parent div.paddingCliente { padding: 7px; }
+div.tableCliente_parent div.nopadding { padding: 0px; }
+div.tableCliente_parent div.col-izq { width: 65%; }
+div.tableCliente_parent div.col-izq { display: table-cell; }
+div.tableCliente_parent div.col-izq { font-size: 0; }
+div.padding25Cliente { margin: 25px 25px 0px 25px; }
+/* table parent */
+
+/* table child */
+div.tableCliente_parent div.col-top,
+div.tableCliente_parent div.col-bot-izq,
+div.tableCliente_parent div.col-bot-der { font-size: 16px;	}
+div.tableCliente_parent div.col-bot-izq { width: 100%;	}
+div.tableCliente_parent div.col-bot-der { width: 35%; }
+div.tableCliente_parent div.col-bot-izq,
+div.tableCliente_parent div.col-bot-der {
+  vertical-align: top;
+	display: inline-block;
+}
+/* table child */
+
+/* borde */
+.goborderCliente {
+  border:2px solid #d9d9d9;
+  margin:1px;
+}
+.goborderCliente.full {
+	height: auto;
+  width: 966px;
+  padding: 0px 10px;
+}
+/* borde */
+
+/* form busqueda por nombre */
+table.formBusquedaNombre { width: 100%;  margin: 25px auto; }
+table.formBusquedaNombre tr td { height: 28px; line-height: 28px; text-align: center; }
+table.formBusquedaNombre td label { font-size: 12px; font-weight: bold; text-align: center; display: inline-block; padding: 7px 3px 7px 3px; border: 0px; vertical-align: middle; font-family: arial,verdana; }
+table.formBusquedaNombre td input { height: 21px; text-align: center; text-transform: uppercase; -moz-box-sizing: border-box; width: 160px; border: 1px solid #CECECE; padding: 0px 5px; font-size: 12px; color: #333333; }
+/* fin form busqueda por nombre */
+
+/* form busqueda por cu */
+table.formBusquedaCU { width: 100%; margin: 25px auto; }
+table.formBusquedaCU tr td { height: 28px; line-height: 28px; text-align: center; }
+table.formBusquedaCU td label { font-size: 12px; font-weight: bold; text-align: center; display: inline-block; padding: 7px 3px 7px 3px; border: 0px; vertical-align: middle; font-family: arial,verdana; }
+table.formBusquedaCU td input { width: 100px; height: 21px; text-align: center; -moz-box-sizing: border-box; border: 1px solid #CECECE; padding: 0px 5px; font-size: 12px; color: #333333; }
+/* fin form busqueda por cu */
+
+/* form busqueda por taz */
+table.formBusquedaTaz { width: 100%; margin: 25px auto; }
+table.formBusquedaTaz tr td { height: 28px; line-height: 28px; text-align: center; }
+table.formBusquedaTaz td label { font-size: 12px; font-weight: bold; text-align: right; display: inline-block; padding: 7px 3px 7px 3px; border: 0px; vertical-align: middle; font-family: arial,verdana; }
+table.formBusquedaTaz td input { height: 21px; text-align: center; -moz-box-sizing: border-box; width: 225px; border: 1px solid #CECECE; padding: 0px 5px; font-size: 12px; color: #333333; }
+/* fin form busqueda por taz */
+
+/* form busqueda por razon social */
+table.formBusquedaRsocial { width: 100%; margin: 25px auto; }
+table.formBusquedaRsocial tr td { height: 28px; line-height: 28px; text-align: center; }
+table.formBusquedaRsocial td label { font-size: 12px; font-weight: bold; text-align: right; display: inline-block; padding: 7px 3px 7px 3px; border: 0px; vertical-align: middle; font-family: arial,verdana; }
+table.formBusquedaRsocial td input { height: 21px; text-align: center; text-transform: uppercase; -moz-box-sizing: border-box; width: 225px; border: 1px solid #CECECE; padding: 0px 5px; font-size: 12px; color: #333333; }
+/* fin form busqueda por razon social */
+
+/* botones */
+button.btnCliente{
+  font-family: arial, verdana;
+  display: inline-block;
+  background-color: #999999;
+  color: #ffffff;
+  width: 100px;
+  height: 21px;
+  text-align: center;
+  margin: 4px auto;
+  border: 0px;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+a.btnCliente{
+  font-family: arial, verdana;
+  display: inline-block;
+  background-color: #999999;
+  color: #ffffff;
+  width: 100px;
+  height: 21px;
+  line-height: 21px;
+  text-align: center;
+  margin: 4px auto;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* fin botones */
+
+/* resultadosCliente de busqueda */
+#resultadosCliente { margin-top: 20px; }
+
+/* resultadosCliente Tabla */
+#resultadosCliente #tablaCliente { background-color: #F8F8F8; }
+#resultadosCliente #tablaCliente table { width: 100%; border-bottom: 1px solid #42BEAC; }
+#resultadosCliente #tablaCliente table th {
+  font-family: arial, verdana;
+  font-size: 14px;
+	font-weight: bold;
+  padding: 15px 1px;
+}
+#resultadosCliente #tablaCliente table tbody tr:hover { background-color: #e8e8e8; cursor: pointer; }
+#resultadosCliente #tablaCliente table td {
+  font-family: arial, verdana;
+  font-size: 12px;
+  padding: 12px;
+	vertical-align: middle;
+	text-align: left;
+  line-height: normal;
+}
+#resultadosCliente #tablaCliente table td:first-child { text-align: center; }
+#resultadosCliente #tablaCliente table td:nth-child(6) { text-align: center; }
+#resultadosCliente #tablaCliente table td:nth-child(7) { text-align: center; }
+#resultadosCliente #tablaCliente table td img.usuario {
+	vertical-align: middle;
+	width: 100%;
+	max-width: 38px;
+	margin-right: 11px;
+}
+#resultadosCliente #tablaCliente table thead, #resultadosCliente #tablaCliente table tbody { display: block; }
+#resultadosCliente #tablaCliente table tbody:nth-child(2) {
+  height: 275px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* cliente seleccionado informacion */
+#tablaCteSel table { width: 100%; border-bottom: 1px solid #42BEAC; }
+#tablaCteSel table tbody { background-color: #F8F8F8; }
+#tablaCteSel table td {
+  font-family: arial, verdana;
+  font-size: 12px;
+  padding: 8px;
+	vertical-align: middle;
+	text-align: center;;
+  line-height: normal; }
+#tablaCteSel table td img.usuario {
+ 	vertical-align: middle;
+ 	width: 100%;
+ 	max-width: 38px;
+ 	margin-right: 11px;
+ }
+
+/* lista de pedido por cliente */
+#tablaListPed table { width: 100%; border-bottom: 1px solid #42BEAC; margin-bottom: 10px; background-color: #F8F8F8; }
+#tablaListPed table thead { display: block; }
+#tablaListPed table tbody { display: block; }
+#tablaListPed table th { text-align: center; }
+#tablaListPed table tbody tr:hover { background-color: #e8e8e8; cursor: pointer; }
+#tablaListPed table th {
+  font-family: arial, verdana;
+  font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+  padding: 15px 1px;
+ }
+#tablaListPed table td {
+  font-family: arial, verdana;
+  font-size: 12px;
+  padding: 8px;
+	vertical-align: middle;
+	text-align: center;;
+  line-height: normal;
+ }
+#tablaListPed table tbody:nth-child(2) {
+   height: 218px;
+   overflow-y: auto;
+   width: 100%;
+ }
+
+.cssTableCte { width: 100%; }
+.cssImgCte { width: 10%; }
+.cssCUCte { width: 13%; }
+.cssCECte { width: 13%; }
+.cssNomCte { width: 20%; }
+.cssDirCte { width: 22%; }
+.cssStaCte { width: 8%; }
+.cssSGCte { width: 10%; }
+.cssSCCte { width: 3%; }
+
+/* resultados pedidos por cliente */
+.cssListPedidos { width: 9%; }
+
+.cssImgCteLP { width: 10%; }
+.cssNomCteLP { width: 40%; }
+.cssCUCteLP { width: 35%; }
+.cssSCCteLP { width: 15%; }
+
+.cssImgUp { position: relative; text-align: center; top: 0px; margin-bottom: 3px; background-color: #FFFFFF; }
+/* End resultadosCliente Tabla */
+
+/* verde */
+hr.verde {
+  border: 0;
+  border-top: 1px solid #42BEAC;
+  background-color: transparent;
+}
+
+.verde { color: #037550; }
+.rojo {color: #DA291C; }
+/* fin verde */
+
+/* hr's */
+h3{
+	font-family: arial, verdana;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	display: block;
+	margin: 0;
+	padding: 0px;
+	border: 0;
+	font-weight: bold;
+}
+
+h2 {
+	font-family: arial, verdana;
+	font-size: 16px;
+	line-height: 14px;
+	margin: 0;
+	padding: 0px;
+	border: 0;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #d4d4d4;
+}
+/* fin hr's */
+
+/* etiquetasCliente lcr */
+#etiquetasCliente{ margin-top: 10px; }
+#etiquetasCliente div.tableCte {
+	display: table;
+	margin: 0 auto;
+}
+#etiquetasCliente div.tableCte div.cellCte {
+	display: table-cell;
+	padding: 0 15px;
+}
+#etiquetasCliente div.tableCte div.cellCte,
+#etiquetasCliente div.tableCte div.cellCte img,
+#etiquetasCliente div.tableCte div.cellCte label {
+  font-family: arial, verdana;
+  font-size: 11px;
+	vertical-align: middle;
+}
+#etiquetasCliente div.tableCte table td {
+	vertical-align: middle;
+	padding: 2px;
+	font-size: 11px;
+}
+/* end etiquetasCliente lcr*/
+
+/* botonesCliente */
+#botonesCliente{
+  margin-top: 15px;
+  text-align: right;
+}
+#botonesCliente #innerCte{
+  display: inline-block;
+  text-align: center;
+}
+#botonesCliente #innerCte a{
+  margin-left: 5px;
+}
+#botonesCliente #innerCte p{
+  margin-top: 5px;
+  text-align: left;
+  margin-left: 5px;
+  font-family: arial, verdana;
+  font-size: 11px;
+}
+
+#botonesClienteCot{
+  text-align: right;
+}
+#botonesClienteCotP{
+  text-align: left;
+}
+
+#botoneCentral{
+  width: 135px;
+}
+/* end botones */
+
+/* tabla agregar clientenuevo */
+table.clientenuevo { margin: 0 auto; }
+table.clientenuevo th { text-align: left; font-weight: bold; padding: 10px 3px; }
+table.clientenuevo td { text-align: left; padding: 7px 3px; }
+table.clientenuevo td input[type="text"]{ width: 260px; margin-bottom: 5px; text-transform: uppercase; text-align: center !important;}
+table.clientenuevo td input[type="date"]{ width: 260px; margin-bottom: 5px; }
+table.clientenuevo td label { font-size: 12px !important; }
+
+
+table.clientenuevo td input[type=radio ]:not(old) + label { margin: 0px 10px 0px 0px !important; }
+
+img.flag { float: right; position: relative; top: 13px; }
+</style>
+
+<script type="text/javascript">
+function myMethod(e){
+  var key = (document.all) ? e.keyCode : e.which;
+     
+    console.log('Valor de key');
+    console.log(key);
+   
+    return (key <= 13 || (key >= 48 && key <= 57) || key == 46);
+
+}
+
+
+$(function () {
+    $("button:submit").click(function () { return false; });
+ $("a:submit").click(function () { return false; });
+   
+       /* var path = window.location.href.substring(0, window.location.href.toLowerCase().indexOf("principal")) + 'principal/';
+        path = path.replace("principal/", "");
+        $.backstretch(path + "Content/assets/img/backgrounds/background1.jpg");*/
+  
+});
+</script>
+
+<div id="grid-presupuestos" ng-init="initConsultaPresupuestos()" >
+	<div>
+		<img src="img/logoElektra.png" width="150px">
+		<div id="info_reporte">
+			<span><b>Detalle del Producto</b></span><br>
+			<span>Empleado: <span><b>{{empleado}}</b></span></span>
+		</div>
+		<hr>
+	</div>
+	
+<!--	<div id="filtros-presupuesto">
+		<div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div><div class="md-ripple-container"></div></div>
+		<form name='frmFiltros'>
+			<div class="div-date-filter">
+				<label>A partir del día:</label>
+				<adm-dtp ng-model="startDate" full-data="startDate_detail" maxdate="{{endDate_detail.unix}}"></adm-dtp>
+			</div>
+			<div class="div-date-filter">
+				<label>Al día de:</label>
+				<adm-dtp ng-model="endDate" full-data="endDate_detail" mindate="{{startDate_detail.unix}}"></adm-dtp>
+			</div>
+			<div class="div-date-filter">
+				<a title="Continuar con la Venta" id="btn-consultar-cp" class="button" ng-click="consultarPresupuestos();">Consultar</a>
+			</div>
+			<br><br>
+
+			<div ng-repeat = "venta in tipoVenta" style="display: inline-block;">
+				<input id="chk-vta-{{venta.tipo}}" type="checkbox" ng-model="venta.seleccionado" ng-checked="venta.seleccionado" />
+				<label for="chk-vta-{{venta.tipo}}">{{venta.nombre}}</label>
+			</div>
+		</form>
+		onkeypress="return ValidarCaracteres();"
+	</div> -->
+
+	<div id="BusquedaPedido"    >
+			<br/>
+
+			<form name='frmBusqueda' class="detalle">
+				
+				
+			
+				<div class="itemMenu ">
+					<div style="background-color: #DA291C; padding: :40px;  width: 100%;text-align: center;">
+						<label  style="color: white; font-size: 14px;margin:30px;"><strong>Buscador</strong></label>	
+					</div>
+					
+					
+					<div style="width: 100%;text-align: center;display: flex;margin-top: 20px;">
+						<div style="width: 20%;text-align: right; padding-top: 8px;">
+							<label class="busqueda"  style="color: green; font-size: 14px"><strong>Buscar por {{Busqueda.nombre}}</strong></label>
+						</div>
+						
+						<div style="width: 30%;text-align: center;">
+								<select ng-init="Busqueda = tipoBusqueda[0]" 
+		        				ng-model="Busqueda" 
+		        				ng-options="option.nombre for option in tipoBusqueda" style="height:20px;width: 200px;margin-right: 10px: " aria-live="polite" class="ui-helper-hidden-accessible busquedass">
+		        				<option value="">Selecciona una option</option>
+								</select>
+						</div>
+
+						<div style="width: 30%;text-align: center;">
+								<input style="text-transform: uppercase" id="busqueda" type="text" maxlength="30" class="buscar ui-autocomplete-input"  ng-model="pedido"   placeholder="{{Busqueda.nombre}}" autocomplete="off" style="background-position: 295px 10px;" >
+						</div>
+
+							
+						<div style="width: 20%;text-align: center;padding-top: 8px;">
+								<div class="div-date-filter" ng-click="consultarPresupuestos2();">
+										<a title="Continuar con la Venta" id="btn-consultar-cp1" class="button" style="position: relative;" >Consultar</a>
+								</div>
+						</div>
+				            
+
+					</div>
+					
+		           
+	          	</div>
+          		<br/>
+	          
+				
+			</form>
+			
+	</div>
+
+
+<!--	<div  ng-show="busquedaReporte" style="width: 100%">
+
+		<strong style="font-size:20px; ">Reimpresión de Nota de Entrega</strong>
+
+		<div style="width: 100%">
+				
+				<table style="width: 100%;">
+					<thead>
+						<tr>
+							<td></td>
+						
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							
+							<td >
+									<div style="width: 100%;display: inline-flex;">
+										<div style="width: 65%;background-color: #E6E6E6; font-size: 14px; border: 5px solid white;">
+											
+											<label><strong > Nombre / Razón Social:</strong> {{Respuesta.ObtenerDetallePedidoReimpresionResult.NombreCliente != null || Respuesta.ObtenerDetallePedidoReimpresionResult.NombreCliente.length >0?Respuesta.ObtenerDetallePedidoReimpresionResult.NombreCliente:'Sin nombre o razon social' }}</label><br/>
+											<label><strong >No. de Cliente Tienda: </strong>{{Respuesta.ObtenerDetallePedidoReimpresionResult.CU != null || Respuesta.ObtenerDetallePedidoReimpresionResult.CU != '' ?Respuesta.ObtenerDetallePedidoReimpresionResult.CU : '0000-0000-0' }}</label><br/>
+											<label><strong >No. de Pedido: </strong>{{Respuesta.ObtenerDetallePedidoReimpresionResult.IdPedido}}</label><br/>
+										</div>
+										<div style="width: 35%;background-color: #E6E6E6;font-size: 14px; border: 5px solid white;"> 
+											
+											<label><strong >Tipo de Venta: </strong>{{Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===1?'Contado':Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===2?'Credito':Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===3?'partado':Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===4?'Mostrador':'Sin Descripción'}}</label><br/>
+											<label><strong >Estatus del Pedido: </strong>{{'Surtido'}}</label><br/>
+											
+										</div>	
+									</div>
+									
+							
+							  </td>
+							
+						</tr>
+					</tbody>
+				</table>
+
+		</div>
+
+</div> -->
+<br/>
+
+
+
+<div ng-show="showDetalle">
+	<label><strong style="color: #DA291C; font-size: 20px;">Detalle</strong></label>
+</div>
+
+<div id="BusquedaPedido" class="detalle" style="width: 100%; display: inline-flex;" ng-show="showDetalle">
+
+
+	<div style="width: 33%">
+			<table width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="text-right"><strong>Código:</strong> </td>
+							<td class="text-left">{{Respuesta.codigo}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Descripción:</strong> </td>
+							<td class="text-left">{{Respuesta.descripcion}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Negocio:</strong> </td>
+							<td class="text-left">{{Respuesta.negocio}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Depto:</strong> </td>
+							<td class="text-left">{{Respuesta.depto}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>SubDepto:</strong> </td>
+							<td class="text-left">{{Respuesta.subDepto}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Clase:</strong> </td>
+							<td class="text-left">{{Respuesta.clase}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>SubClase:</strong> </td>
+							<td class="text-left">{{Respuesta.subClase}}</td>
+						</tr>
+			</table>
+	</div>
+	<div style="width: 33%"> 
+			<table width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="text-right"><strong>Tipo de producto:</strong> </td>
+							<td class="text-left">{{Respuesta.tipoProducto}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Estado:</strong> </td>
+							<td class="text-left">{{Respuesta.estado}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Fecha de alta:</strong> </td>
+							<td class="text-left">{{Respuesta.fechaAlta}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Precio de contado:</strong> </td>
+							<td class="text-left">{{Respuesta.precioContado}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Descuento máximo:</strong> </td>
+							<td class="text-left">{{Respuesta.descMaximo}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Último cambio de precio:</strong> </td>
+							<td class="text-left">{{Respuesta.ultCambioPrecio}}</td>
+						</tr>
+						
+			</table>
+	</div>
+	<div style="width: 33%"> 
+			<table width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="text-right"><strong>Tiempo de garantía:</strong> </td>
+							<td class="text-left">{{Respuesta.tiempoGarantia}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Dias de reparación:</strong> </td>
+							<td class="text-left">{{Respuesta.diasReparacion}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Paquete:</strong> </td>
+							<td class="text-left">{{Respuesta.paquete}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Meneja no. de serie:</strong> </td>
+							<td class="text-left">{{Respuesta.manejaNoSerie}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Código de barras:</strong> </td>
+							<td class="text-left">{{Respuesta.codigoBarras}}</td>
+						</tr>
+						<tr>
+							<td class="text-right"><strong>Tipo de bloqueo:</strong> </td>
+							<td class="text-left">{{Respuesta.ultCambioPrecio}}</td>
+						</tr>
+						
+			</table>
+	</div>
+
+<!-- Carga de los tabbar para la parte del producto -->
+ 
+
+
+	
+
+</div>	
+
+ <div ng-cloak ng-show="showDetalle">
+    <!-- Tabs del tipo de búsqueda -->
+    <div id="wrapperCliente">
+      <div id="tabCliente-container" class="tabCliente-container" ng-init=" tab = tabInicial()">
+        <ul class="etabsCliente-tab">
+          <li ng-hide="esCotizadorCte" ng-class="{ active:tab === 0 }">
+            <a href ng-click="setTab(0)">Ventas Generadas</a>
+          </li>
+          <li ng-class="{ active:tab === 1 }">
+            <a href ng-click="setTab(1)">Existencia de Inventario</a>
+          </li>
+          <li ng-class="{ active:tab === 2 }">
+            <a href ng-click="setTab(2)">Detalle de Movimiento</a>
+          </li>
+         
+        </ul>
+
+        <div class="content">
+          <div class="tableCliente_parent">
+            <div class="panelCliente-container">
+              <div class="goborderCliente full">
+                <div class="paddingCliente">
+
+                  <div ng-show="tab === 0">
+                   				
+                   		<table width="100%" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr id="tr-pedidos">
+											<th>Mes</th>
+											<th>Marcadas</th>
+											<th>Surtidas</th>
+											<th>Canceladas antes de entrega</th>
+											<th>Canceladas después de entrega</th>
+									</tr>
+								</thead>
+						
+								<tbody>
+								
+
+									<tr ng-show="Respuesta.detVtaGeneral.length == 0">
+												<td colspan="5" class="color-gray" style="text-align: center;">No hay información para mostrar Ventas Generales</td>
+									</tr>
+											
+											<tr ng-show="Respuesta.detVtaGeneral.length > 0 " ng-repeat="presupuesto in Respuesta.detVtaGeneral">
+												   <td class="text-left"><strong>{{$index == 0 ? 'Mes Actual': 'Mes Anterior'}}</strong></td>
+													<td class="text-left">{{presupuesto.marcadas}}</td>
+													<td class="text-left">{{presupuesto.surtidas}}</td>
+								            		<td class="text-left">{{presupuesto.canceladasADE}}</td>				
+								            		<td class="text-left">{{presupuesto.canceladasDDE}}</td>
+							<!-- 	<td class="text-left">{{ '$'+currency(presupuesto.Cantidad*(presupuesto.Precio-presupuesto.Descuento))}}</td> -->
+								
+								    		</tr>
+							</tbody>
+
+						
+					</table>
+                  </div>
+                  <div ng-show="tab === 1">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr id="tr-pedidos">
+											<th>Id Ubicacion</th>
+											<th>Descripción</th>
+											<th>Detalle de Movimientos</th>
+											
+											
+									</tr>
+								</thead>
+						
+								<tbody>
+								
+
+									<tr ng-show="Respuesta.detExistInv.length ==0">
+												<td colspan="3" class="color-gray" style="text-align: center;">No hay información para mostrar detalle de inventario</td>
+									</tr>
+											
+											<tr ng-show="Respuesta.detExistInv.length > 0 " ng-repeat="presupuesto in Respuesta.detExistInv">
+													<td class="text-left">{{presupuesto.ubicacion}}</td>
+													<td class="text-left">{{presupuesto.descripcion}}</td>
+								            		<td class="text-left">{{presupuesto.existencia}}</td>
+								            				
+								            	
+							<!-- 	<td class="text-left">{{ '$'+currency(presupuesto.Cantidad*(presupuesto.Precio-presupuesto.Descuento))}}</td> -->
+								
+								    		</tr>
+							</tbody>
+							
+
+						
+					</table>
+
+					<br/>
+					<div class="text-right" style="font-size: 20px;"><strong> Total del Inventario: {{totalInventario}}</strong></div>
+
+					 <table width="100%" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr id="tr-pedidos">
+											<th>Contado sin surtir </th>
+											<th>Apartado con 90% pagado</th>
+											<th>Apartado con menos de 90% pagado</th>
+											<th>Crédito con 90% de enganche pagado</th>
+									</tr>
+								</thead>
+						
+								<tbody>
+								
+									
+											<tr ng-show="Respuesta.detInvTipo.length == 0">
+												<td colspan="3" class="color-gray" style="text-align: center;">No hay información para mostrar detalle de inventario</td>
+									</tr>
+											
+											<tr ng-show="Respuesta.detInvTipo.length > 0" ng-repeat="presupuesto1 in Respuesta.detInvTipo">
+													<td class="text-left">{{presupuesto1.Contadosinsurtir}}</td>
+													<td class="text-left">{{presupuesto1.Apartadocon90pagado}}</td>
+								            		<td class="text-left">{{presupuesto1.Apartadoconmenosde90pagado}}</td>				
+								            		<td class="text-left">{{presupuesto1.Creditocon90deenganchepagado}}</td>				
+								            	
+							<!-- 	<td class="text-left">{{ '$'+currency(presupuesto.Cantidad*(presupuesto.Precio-presupuesto.Descuento))}}</td> -->
+								
+								    		</tr>
+									
+									
+							</tbody>
+
+						
+					</table>
+
+                  </div>
+                  <div ng-show="tab === 2" style="max-height: 200px; overflow-y: auto">
+                   		 <table width="100%" cellspacing="0" cellpadding="0">
+								<thead>
+									<tr id="tr-pedidos">
+											<th>No Tran</th>
+											<th>Ubicación</th>
+											<th>DMInvCant</th>
+											<th>TipoOp</th>
+											<th>TopDesc</th>
+											<th>MInvRef</th>
+											<th>ExistIni</th>
+											<th>ExistFin</th>
+											<th>MInvEntSal</th>
+											<th>EmpIDRed</th>
+											<th>WS</th>
+											<th>UbiDesc</th>
+											<th>Fecha <i ng-click="ordenarPor('fecha', $event)" class="fa fa-sort"></i></a></th>
+
+											
+											
+									</tr>
+								</thead>
+						
+								<tbody >
+								
+									
+									<tr ng-show="Respuesta.detMov.length == 0">
+												<td colspan="13" class="color-gray" style="text-align: center;">No hay información para el detalle del movimineto</td>
+
+									</tr>
+											
+											<tr ng-show="Respuesta.detMov.length > 0 " ng-repeat="presupuesto in Respuesta.detMov | orderBy:sortingOrder:reverse">
+													<td class="text-left">{{presupuesto.NoTransac}}</td>
+													<td class="text-left">{{presupuesto.UbiId}}</td>
+								            		<td class="text-left">{{presupuesto.DMInvCant}}</td>				
+								            		<td class="text-left">{{presupuesto.TipoOp}}</td>
+													<td class="text-left">{{presupuesto.TopDesc}}</td>
+								            		<td class="text-left">{{presupuesto.MInvRef}}</td>
+								            		<td class="text-left">{{presupuesto.ExistIni}}</td>
+													<td class="text-left">{{presupuesto.ExistFin}}</td>
+								            		<td class="text-left">{{presupuesto.MInvEntSal}}</td>
+								            		<td class="text-left">{{presupuesto.EmpIDRed}}</td>
+													<td class="text-left">{{presupuesto.WS}}</td>
+								            		<td class="text-left">{{presupuesto.existencia}}</td>
+								            		<td class="text-left">{{presupuesto.fecha}}</td>
+								            	
+							<!-- 	<td class="text-left">{{ '$'+currency(presupuesto.Cantidad*(presupuesto.Precio-presupuesto.Descuento))}}</td> -->
+								
+								    		</tr>
+
+								    	
+							</tbody>
+
+						
+					</table>
+                  </div>
+				
+
+                  <ng-lista-clientes ng-show="boolMostrarListaClientes"></ng-lista-clientes>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+	<div  ng-show="busquedaReporte" style="width: 100%">
+			<div id="tabla-presupuestos"> 
+
+				<div style="background-color: #DA291C; padding: :40px;  width: 100%;text-align: center;">
+									<label  style="color: white; font-size: 20px;margin:30px;"><strong>Resultados</strong></label>	
+				</div>
+
+
+					<table width="100%" cellspacing="0" cellpadding="0">
+						<thead>
+								<tr id="tr-pedidos">
+							<th>Código <a href=""><i ng-click="ordenarPor('codigo', $event)" class="fa fa-sort"></th>
+							<th>Descripción</th>
+							<th>Marca <a href=""><i ng-click="ordenarPor('marca', $event)" class="fa fa-sort"></i></a></th>
+							<th>Precio <a href=""><i ng-click="ordenarPor('precio', $event)" class="fa fa-sort"></i></a></th>
+							
+						<!-- 	<th>Subtotal</th> -->
+						</tr>
+						</thead>
+						
+						<tbody>
+							
+
+						<tr ng-show="sinResultados">
+							<td colspan="7" class="color-gray">{{mensaje}}</td>
+						</tr>
+						<tr ng-show="!sinResultados" ng-repeat="presupuesto in elementosPaginados[paginaActual] | orderBy:sortingOrder:reverse">
+							<td class="text-left"><a ng-click="consultarDetalleProducto(presupuesto.codigo)" style="text-decoration:underline">{{presupuesto.codigo}}</a></td>
+							<td class="text-left">{{presupuesto.descripcion}}</td>
+							<td class="text-left">{{presupuesto.marca}}</td>				
+							<td class="text-left">{{'$'+currency(presupuesto.precio)}}</td>
+						<!-- 	<td class="text-left">{{ '$'+currency(presupuesto.Cantidad*(presupuesto.Precio-presupuesto.Descuento))}}</td> -->
+							
+						</tr>
+						</tbody>
+
+						<tfoot>
+							  <td colspan="12">
+								<div class="pagination">
+									<ul>
+										<li ng-class="{disabled: paginaActual == 0}">
+											<a href ng-click="paginaAnterior()">« Anterior</a>
+										</li>
+										<li ng-repeat="n in rangoPaginacion(elementosPaginados.length)"
+											ng-class="{active: n == paginaActual}"
+										ng-click="setPage()">
+											<a href ng-bind="n + 1">1</a>
+										</li>
+										<li ng-class="{disabled: paginaActual == elementosPaginados.length - 1}">
+											<a href ng-click="paginaSiguiente()">Siguiente »</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+					  </tfoot>
+					</table>
+
+			</div>
+
+
+			<div style="display: inline-block;width: 100%;">
+		
+		<br/>
+	
+	<!--	<div>
+			<div style="width: 75%;display: inline-block;" >
+				
+				<div style="width: 100%;display: inline-block;" ng-show="Respuesta.ObtenerDetallePedidoReimpresionResult.TipoVenta===2">
+					<input type="checkbox" id="nota" name=""  ng-checked="imprimeNota"/>Nota de entrega
+					<input type="checkbox" name="" id="cale"  ng-checked="imprimeCalendario" />Calendario de pagos
+				</div>
+			
+			</div>
+			
+			<div style="display: inline-block; text-align: left;">
+				<div class="div-date-filter" ng-click="regresar();">
+						<a title="Continuar con la Venta" id="btn-consultar-cp1"   class="button" style="position: relative;" >Regresar</a>
+				</div>
+			
+			
+				<div class="div-date-filter" ng-click="consultardatosTicket();">
+						<a title="Continuar con la Venta" id="btn-consultar-cp1"  class="button" style="position: relative;" >Imprimir</a>
+				</div>
+			</div>
+		
+		</div>-->
+</div>
+
+</div>
+<!--	<strong><p id="total-presupuestos">Total : <b class="color-ekt">{{total}}</b></p> </strong> -->
+
+	 
+</div>
